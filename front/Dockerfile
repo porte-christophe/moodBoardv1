@@ -1,7 +1,13 @@
 FROM node:22
 
-WORKDIR /app
+WORKDIR /app/frontend
 
-RUN npm install -g @angular/cli
+COPY /frontend/package*.json .
 
-CMD ["npm","install"]
+RUN npm install -g @angular/cli 
+
+RUN npm install
+
+COPY /frontend/ .
+
+CMD ["npm","start"]
