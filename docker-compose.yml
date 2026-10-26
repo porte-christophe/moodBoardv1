@@ -2,6 +2,7 @@
 services:
   front:
     build: ./front
+    user: 1000:1000
     ports:
       - 4200:4200
     volumes:
@@ -15,6 +16,7 @@ services:
 
   back:
     build: ./back
+    user: 1000:1000
     ports:
       - 3333:8000
     volumes:
