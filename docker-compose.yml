@@ -21,7 +21,8 @@ services:
       - 3333:8000
     volumes:
       - ./back:/app
-    working_dir: /app/backend
+    working_dir: /app
+    command: "symfony serve --listen-ip=0.0.0.0 --no-tls"
     environment:
       - DATABASE_URL=mysql://user:password@db:3506/dbmood
       - DB_HOST=db

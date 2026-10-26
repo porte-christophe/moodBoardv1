@@ -1,4 +1,4 @@
-FROM php:8.5.12-cli
+FROM php:8.5-fpm
 
 WORKDIR /app
 
@@ -19,6 +19,6 @@ RUN symfony local:php:refresh
 
 RUN symfony server:ca:install
 
-EXPOSE 3333
+RUN composer install
 
-CMD ["symfony","local:server:start"]
+CMD ["symfony", "server"]
